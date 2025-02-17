@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+    <h1>hi, im steven chang 👋🏼 </h1>
+
+    <div id="visitor-count"> loading visitor count... </div>
+
+    <div class="contact">
+        brooklyn, ny <br>
+        <a class="links" href="mailto:stevenxchang@gmail.com" target="_blank">contact me</a>
+        |
+        <a class="links" href="https://linkedin.com/in/stevenxchang" target="_blank">linkedin</a>
+        |
+        <a class="links" href="./resume-copy.pdf" target="_blank"> resume (pdf) </a>
+    </div>
+
+    <h2 class="section-heading">⚒ work experience</h2>
+
+    <div class="work-experience">
+        <div class="role"><b> client support technician @ sbu division of information technology </b></div>
+    </div>
+
+    <div class="duration">
+        january 2023 - present
+    </div>
+
+    <ul class="work-details">
+        <li>
+            delivered it support for hardware, software, and account issues for a 30,000+ customer base  
+        </li>
+
+        <li>
+            deployed and managed student loaner laptops using tools like winpe and jamf  
+        </li>
+        
+        <li>
+            created knowledge articles to streamline onboarding and training for new interns  
+        </li>
+    </ul>
+
+    <div class="work-experience">
+        <div class="role"><b> digital technology intern @ arup </b></div>
+    </div>
+
+    <div class="duration">
+        june 2024 - august 2024
+    </div>
+
+    <ul class="work-details">
+        <li>
+            managed enterprise devices via microsoft intune/autopilot and enforced conditional access policies  
+        </li>
+
+        <li>
+            configured static ips, gateways, and dns to remote workstation servers  
+        </li>
+        
+        <li>
+            resolved high-priority it tickets with a 24-hour sla using servicenow 
+        </li>
+
+    </ul>
+
+    <div class="work-experience">
+        <div class="role"><b>it specialist @ liberty homeguard </b></div>
+    </div>
+
+    <div class="duration">
+        july 2022 - january 2023
+    </div>
+
+    <ul class="work-details">
+        <li>
+            automated onboarding processes using uipath and active directory  
+        </li>
+
+        <li>
+            integrated aws chatbot services using lex, connect, and lambda to reduce phone queue tickets  
+        </li>
+        
+        <li>
+            logged key website issues by conducting qa testing through jira
+        </li>
+    </ul>
+
+    <h2 class="section-heading">🎓 education</h2>
+
+    <div class="school">
+        <b> b.s technological systems management @ stony brook university </b>
+    </div>
+
+    <div class="duration">
+        august 2021 - may 2025
+    </div>
+
+    <h2 class="section-heading">🤹🏻 skills</h2>
+
+    <ul class="skills">
+        <li><b> os & endpoint management- </b> windows 10/11, macos, microsoft intune, autopilot, jamf</li>
+        <li><b> itsm & cloud- </b> servicenow, jira, active directory, microsoft azure, aws </li>
+        <li><b> certifications- </b> microsoft azure fundamentals: az-900 </li>
+    </ul>
+</div>
+<script>
+    async function updateVisitorCount() {
+    const countElement = document.getElementById('visitor-count');
+    
+    try {
+        const response = await fetch('https://x1trcicu5g.execute-api.us-east-2.amazonaws.com/count', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        const data = await response.json();
+        countElement.textContent = `${data.count} people have visited my website!`;
+    } catch (error) {
+        console.error('Error:', error);
+        countElement.textContent = 'Error loading visitor count';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateVisitorCount);
+
+
+</script>
+</body>
+</html>

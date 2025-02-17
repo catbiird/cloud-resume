@@ -1,0 +1,54 @@
+body {
+    font-family: 'Inter', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    min-height: 100vh; 
+}
+
+.container {
+    max-width: 600px; 
+    width: 90%;
+    padding: 40px; 
+    text-align: left; 
+}
+
+.section-heading {
+    margin-top: 40px;
+}
+
+.school,
+.skills {
+    margin-top: 20px;
+}
+
+.links {
+    color: #0077ff; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+}
+
+.links:hover {
+    color: #0077ff; 
+}
+
+.links:visited {
+    color: #0077ff; 
+}
+
+.duration {
+    color: #4d5661;
+}
+
+ul li {
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+}
+
+#visitor-count {
+    font-family: 'Inter', sans-serif;
+    margin-top: 20px;  
+    color: #000000;       
+}
